@@ -7,21 +7,10 @@ public class JumpsGT : MonoBehaviour
 {
     public TextMeshProUGUI jumpsText;
     private int jumps = 3;
-    private float time = 0;
-    private PlayerShip playerShip;
     // Start is called before the first frame update
     void Start()
     {
-        playerShip = FindObjectOfType<PlayerShip>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (playerShip.gameObject.activeSelf == false)
-        {
-            time += Time.deltaTime;
-        }
+        jumpsText.text = "Jumps: " + jumps;
     }
 
     public void UpdateJumps(int jumps)
@@ -32,11 +21,15 @@ public class JumpsGT : MonoBehaviour
         if (jumps <= 0)
         {
             jumpsText.text = "Jumps: 0";
+
+            if (jumps < 0)
+            {
+                FindObjectOfType<GameOver>().GameOverScreen(true);
+            }
         } 
-        if (jumps >= 0 && time > 2)
+        else if (jumps >= 0)
         {
-            playerShip.gameObject.SetActive(true);
-            time = 0;
+            FindObjectOfType<GameOver>().GameOverScreen(false);
         }
     }
 
@@ -44,5 +37,6 @@ public class JumpsGT : MonoBehaviour
     {
         jumps -= 1;
         UpdateJumps(jumps);
+        FindObjectOfType<PlayerShip>().gameObject.SetActive(true);
     }
 }

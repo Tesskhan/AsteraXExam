@@ -189,7 +189,7 @@ public class Asteroid : MonoBehaviour
 
         GameObject otherGO = coll.gameObject;
 
-        if (otherGO.tag == "Bullet")
+        if (otherGO.tag == "Bullet" || otherGO.transform.root.gameObject.tag == "Player")
         {
             
             if (size > 1)
@@ -207,15 +207,17 @@ public class Asteroid : MonoBehaviour
                     children[i].InitAsteroidParent();
                 }
             }
+            if (otherGO.tag == "Bullet")
+            {
             FindObjectOfType<ScoreGT>().AddScore(AsteraX.AsteroidsSO.pointsForAsteroidSize[size]);
             Destroy(otherGO);
-            
-        } 
-        else if (otherGO.transform.root.gameObject.tag == "Player")
-        {
-            FindObjectOfType<PlayerShip>().gameObject.SetActive(false);
-            FindObjectOfType<JumpsGT>().RemoveJumps();
-        }   
+            }
+            else if (otherGO.transform.root.gameObject.tag == "Player")
+            {
+                FindObjectOfType<PlayerShip>().gameObject.SetActive(false);
+                FindObjectOfType<JumpsGT>().RemoveJumps();
+            }   
+        }  
     }
 
 
