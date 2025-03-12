@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 #if DEBUG_Asteroid_TestOOBVel
 using UnityEditor;
@@ -188,13 +189,9 @@ public class Asteroid : MonoBehaviour
 
         GameObject otherGO = coll.gameObject;
 
-        if (otherGO.tag == "Bullet" || otherGO.transform.root.gameObject.tag == "Player")
+        if (otherGO.tag == "Bullet")
         {
-            if (otherGO.tag == "Bullet")
-            {
-                Destroy(otherGO);
-            }
-
+            
             if (size > 1)
             {
                 // Detach the children Asteroids
@@ -210,9 +207,15 @@ public class Asteroid : MonoBehaviour
                     children[i].InitAsteroidParent();
                 }
             }
-
-            Destroy(gameObject);
-        }
+            FindObjectOfType<ScoreGT>().AddScore(AsteraX.AsteroidsSO.pointsForAsteroidSize[size]);
+            Destroy(otherGO);
+            
+        } 
+        else if (otherGO.transform.root.gameObject.tag == "Player")
+        {
+            FindObjectOfType<PlayerShip>().gameObject.SetActive(false);
+            FindObjectOfType<JumpsGT>().RemoveJumps();
+        }   
     }
 
 
