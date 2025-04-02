@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{22F023FF-FBA7-57F8-79E2-A1108E5888A4}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/__Scripts/AsteraX.cs">
+    <Files>
+      <File FileName="Assets/__Scripts/AsteraX.cs" Line="292" Column="32" />
+      <File FileName="Assets/__Scripts/PlayerShip.cs" Line="176" Column="45" />
+      <File FileName="Assets/__Scripts/Asteroid.cs" Line="225" Column="5" />
+      <File FileName="Assets/__Scripts/Bullet.cs" Line="25" Column="34" />
+      <File FileName="Assets/__Scripts/AsteroidsScriptableObject.cs" Line="34" Column="40" />
+      <File FileName="Assets/__Scripts/PositionRelativeToAnotherGameObject.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.AsteraX_220UCP_220C02_220V05_220-_220Particle_220Effects_220Solution PreferredExecutionTarget="Unity.Editor" />
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{8318F89C-F6C5-277F-44A5-4BFF805B5DD4}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/__Scripts/Asteroid.cs">
+    <Files>
+      <File FileName="Assets/__Scripts/Asteroid.cs" Line="59" Column="55" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.AsteraX_220UCP_220C02_220V06_220-_220Multiple_220Levels_220_226_220Pause_220Challenge PreferredExecutionTarget="Unity.Editor" />
+</Properties>

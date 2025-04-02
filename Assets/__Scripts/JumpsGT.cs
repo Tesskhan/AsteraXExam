@@ -1,42 +1,20 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
-public class JumpsGT : MonoBehaviour
-{
-    public TextMeshProUGUI jumpsText;
-    private int jumps = 3;
-    // Start is called before the first frame update
-    void Start()
-    {
-        jumpsText.text = "Jumps: " + jumps;
-    }
+[RequireComponent( typeof(Text) )]
+public class JumpsGT : MonoBehaviour {
+    Text    txt;
 
-    public void UpdateJumps(int jumps)
-    {
-        jumpsText.text = "Jumps: " + jumps;
-        Debug.Log("Jumps updated to: " + jumps);
-
-        if (jumps <= 0)
-        {
-            jumpsText.text = "Jumps: 0";
-
-            if (jumps < 0)
-            {
-                FindObjectOfType<GameOver>().GameOverScreen(true);
-            }
-        } 
-        else if (jumps >= 0)
-        {
-            FindObjectOfType<GameOver>().GameOverScreen(false);
-        }
-    }
-
-    public void RemoveJumps()
-    {
-        jumps -= 1;
-        UpdateJumps(jumps);
-        FindObjectOfType<PlayerShip>().gameObject.SetActive(true);
-    }
+	// Use this for initialization
+	void Start () {
+        txt = GetComponent<Text>();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+        // This is a Ternary Operator: https://www.dotnetperls.com/ternary 
+        txt.text = (PlayerShip.JUMPS >= 0) ? PlayerShip.JUMPS+" Jumps" : "";
+	}
 }
